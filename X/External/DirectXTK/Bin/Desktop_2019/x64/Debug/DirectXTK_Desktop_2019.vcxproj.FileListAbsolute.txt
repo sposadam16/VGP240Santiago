@@ -1,0 +1,3 @@
+D:\PeterStuff\X\Main\X\External\DirectXTK\Bin\Desktop_2019\x64\Debug\DirectXTK.lib
+D:\PeterStuff\X\Main\X\External\DirectXTK\Bin\Desktop_2019\x64\Debug\DirectXTK.pdb
+C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\X\External\DirectXTK\Bin\Desktop_2019\x64\Debug\DirectXTK.lib
