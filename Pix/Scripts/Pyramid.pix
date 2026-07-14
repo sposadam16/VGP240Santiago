@@ -1,3 +1,32 @@
-SetResolution(11,10,25)
+SetResolution(11,10,25,true)
 
 
+DrawPixel(5,3)
+
+DrawPixel(4,4)
+DrawPixel(5,4)
+DrawPixel(6,4)
+
+DrawPixel(3,5)
+DrawPixel(4,5)
+DrawPixel(5,5)
+DrawPixel(6,5)
+DrawPixel(7,5)
+
+DrawPixel(2,6)
+DrawPixel(3,6)
+DrawPixel(4,6)
+DrawPixel(5,6)
+DrawPixel(6,6)
+DrawPixel(7,6)
+DrawPixel(8,6)
+
+DrawPixel(1,7)
+DrawPixel(2,7)
+DrawPixel(3,7)
+DrawPixel(4,7)
+DrawPixel(5,7)
+DrawPixel(6,7)
+DrawPixel(7,7)
+DrawPixel(8,7)
+DrawPixel(9,7)
