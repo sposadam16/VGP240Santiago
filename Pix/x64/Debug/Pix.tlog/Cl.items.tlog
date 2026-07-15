@@ -1,11 +1,16 @@
+C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdBeginDraw.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdBeginDraw.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdDrawPixel.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdDrawPixel.obj
+C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdEndDraw.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdEndDraw.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdSetColor.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdSetColor.obj
+C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdSetFilledMode.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdSetFilledMode.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdSetResolution.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdSetResolution.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdVarFloat.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdVarFloat.obj
+C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdVertex.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdVertex.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CommandDictionary.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CommandDictionary.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\Graphics.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\Graphics.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\MathHelper.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\MathHelper.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\PixEditor.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\PixEditor.obj
+C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\PrimitivesManager.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\PrimitivesManager.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\Rasterizer.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\Rasterizer.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\ScriptParser.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\ScriptParser.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\TextEditor.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\TextEditor.obj
