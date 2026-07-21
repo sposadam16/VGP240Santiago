@@ -1,9 +1,17 @@
-SetResolution(16,16,25,true)
+SetResolution(30,16,20,true)
 
-// Solid triangle. The rasterizer interpolates the three vertex colors.
+// Small filled triangle on the left.
 SetFillMode(solid)
 BeginDraw(triangle)
-Vertex(2,13,1,0,1)
-Vertex(8,2,0,1,1)
-Vertex(13,13,1,1,0)
+Vertex(3,12,1,0,1)
+Vertex(7,4,0,1,1)
+Vertex(11,12,1,1,0)
+EndDraw()
+
+// Matching small triangle on the right, drawn only as an outline.
+SetFillMode(WireFrame)
+BeginDraw(triangle)
+Vertex(18,12,1,0,1)
+Vertex(22,4,0,1,1)
+Vertex(26,12,1,1,0)
 EndDraw()
