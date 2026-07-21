@@ -1,0 +1,9 @@
+SetResolution(16,16,25,true)
+
+// Solid triangle. The rasterizer interpolates the three vertex colors.
+SetFillMode(solid)
+BeginDraw(triangle)
+Vertex(2,13,1,0,1)
+Vertex(8,2,0,1,1)
+Vertex(13,13,1,1,0)
+EndDraw()
