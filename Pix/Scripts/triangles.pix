@@ -1,6 +1,6 @@
 SetResolution(30,16,20,true)
 
-// Small filled triangle on the left.
+
 SetFillMode(solid)
 BeginDraw(triangle)
 Vertex(3,12,1,0,1)
@@ -8,10 +8,11 @@ Vertex(7,4,0,1,1)
 Vertex(11,12,1,1,0)
 EndDraw()
 
-// Matching small triangle on the right, drawn only as an outline.
+
 SetFillMode(WireFrame)
 BeginDraw(triangle)
 Vertex(18,12,1,0,1)
 Vertex(22,4,0,1,1)
 Vertex(26,12,1,1,0)
 EndDraw()
+

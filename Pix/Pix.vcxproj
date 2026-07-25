@@ -171,12 +171,15 @@
     <None Include="xconfig.json" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Clipper.cpp" />
     <ClCompile Include="CmdBeginDraw.cpp" />
     <ClCompile Include="CmdDrawPixel.cpp" />
     <ClCompile Include="CmdEndDraw.cpp" />
+    <ClCompile Include="CmdSetClipping.cpp" />
     <ClCompile Include="CmdSetColor.cpp" />
     <ClCompile Include="CmdSetFilledMode.cpp" />
     <ClCompile Include="CmdSetResolution.cpp" />
+    <ClCompile Include="CmdSetViewport.cpp" />
     <ClCompile Include="CmdVarFloat.cpp" />
     <ClCompile Include="CmdVertex.cpp" />
     <ClCompile Include="CommandDictionary.cpp" />
@@ -197,12 +200,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Clipper.h" />
     <ClInclude Include="CmdBeginDraw.h" />
     <ClInclude Include="CmdDrawPixel.h" />
     <ClInclude Include="CmdEndDraw.h" />
+    <ClInclude Include="CmdSetClipping.h" />
     <ClInclude Include="CmdSetColor.h" />
     <ClInclude Include="CmdSetFilledMode.h" />
     <ClInclude Include="CmdSetResolution.h" />
+    <ClInclude Include="CmdSetViewport.h" />
     <ClInclude Include="CmdVarFloat.h" />
     <ClInclude Include="CmdVertex.h" />
     <ClInclude Include="Command.h" />

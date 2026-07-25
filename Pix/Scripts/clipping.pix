@@ -1,0 +1,43 @@
+SetResolution(50, 50, 10, true)
+
+SetViewport(10, 10, 30, 30, true)
+SetClipping(true)
+
+
+BeginDraw(point)
+Vertex(10, 10, 1, 0, 0)
+Vertex(40, 40, 1, 0, 0)
+
+Vertex(8, 17, 0, 1, 0)
+Vertex(9, 16, 0, 1, 0)
+Vertex(10, 15, 0, 1, 0)
+Vertex(11, 14, 0, 1, 0)
+Vertex(12, 13, 0, 1, 0)
+Vertex(13, 12, 0, 1, 0)
+Vertex(14, 11, 0, 1, 0)
+Vertex(15, 10, 0, 1, 0)
+Vertex(16, 9, 0, 1, 0)
+Vertex(17, 8, 0, 1, 0)
+EndDraw()
+
+BeginDraw(line)
+Vertex(5, 20, 1, 0, 0)
+Vertex(23, 25, 0, 0, 1)
+
+Vertex(15, 5, 1, 1, 0)
+Vertex(45, 20, 1, 0, 1)
+
+Vertex(45, 27, 0, 1, 1)
+Vertex(32, 45, 1, 1, 0)
+EndDraw()
+
+BeginDraw(triangle)
+Vertex(15, 25, 1, 1, 0)
+Vertex(25, 43, 0, 1, 1)
+Vertex(5, 43, 1, 0, 1)
+
+Vertex(30, 20, 1, 0, 0)
+Vertex(48, 25, 0, 1, 0)
+Vertex(35, 33, 0, 0, 1)
+EndDraw()
+
