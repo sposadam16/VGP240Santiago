@@ -202,6 +202,9 @@
       <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="CmdSetClipping.h" />
+    <ClInclude Include="Matrix4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Editor">

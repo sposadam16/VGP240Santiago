@@ -1,11 +1,11 @@
 #pragma once
 #include "Vector2.h"
 #include "Vector3.h"
-
+#include "Matrix4.h"
 
 
 namespace MathHelper {
-	constexpr float PI = 3.1415926f / 180.0f;
+	constexpr float DegToRad = 3.1415926f / 180.0f;
 
 	bool CheckEqual(float a, float b);
 
@@ -22,6 +22,15 @@ namespace MathHelper {
 	float Dot(const Vector3& a, const Vector3& b);
 
 	Vector3 Cross(const Vector3& a, const Vector3& b);
+	
+	//Matrix functions
+	Vector3 TransformCoord(const Vector3& v, const Matrix4& m);
+	Vector3 TransformNormal(const Vector3& v, const Matrix4& m);
 
+	Matrix4 Transpose(const Matrix4& m);
 
+	Matrix4 Inverse(const Matrix4& m);
+	Matrix4 Adjoint(const Matrix4& m);
+
+	float Determinant(const Matrix4& m);
 }
