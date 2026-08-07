@@ -10,6 +10,8 @@
 #include "CmdSetFilledMode.h"
 #include "CmdSetViewport.h"
 #include "CmdSetClipping.h"
+#include "CmdMatrixStack.h"
+#include "CmdCamera.h"
 
 
 CommandDictionary* CommandDictionary::Get()
@@ -40,6 +42,20 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdVertex>();
 	RegisterCommand<CmdEndDraw>();
 
+	//Matrix stack commands
+	RegisterCommand<CmdPushTranslation>();
+	RegisterCommand<CmdPushRotationX>();
+	RegisterCommand<CmdPushRotationY>();
+	RegisterCommand<CmdPushRotationZ>();
+	RegisterCommand<CmdPushScaling>();
+	RegisterCommand<CmdPopMatrix>();
+
+	//Camera commands
+	RegisterCommand<CmdSetCameraPosition>();
+	RegisterCommand<CmdSetCameraDirection>();
+	RegisterCommand<CmdSetCameraNear>();
+	RegisterCommand<CmdSetCameraFar>();
+	RegisterCommand<CmdSetCameraFOV>();	
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()

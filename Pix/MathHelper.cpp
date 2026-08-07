@@ -4,6 +4,12 @@ bool MathHelper::CheckEqual(float a, float b) {
 	return abs(a - b) < 0.001f;
 }
 
+void MathHelper::FlattenVectorScreenCoord(Vector3& v) 
+{
+	v.x = floor(v.x + 0.5f);
+	v.y = floor(v.y + 0.5f);
+}
+
 float MathHelper::MagnitudeSquared(const Vector2& v) {
 	return v.x * v.x + v.y * v.y;
 }
