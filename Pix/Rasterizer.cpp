@@ -1,5 +1,5 @@
 #include "Rasterizer.h"
-
+#include "DepthBuffer.h"
 
 void DrawLineHorizontal(const Vertex& left, const Vertex& right) {
 	float dx = right.pos.x - left.pos.x;
@@ -40,7 +40,10 @@ void Rasterizer::DrawPoint(int x, int y)
 
 void Rasterizer::DrawPoint(const Vertex& v)
 {
-	X::DrawPixel(v.pos.x, v.pos.y, v.color);
+	if (DepthBuffer::Get()->CheckDepthBuffer(v.pos.x, v.pos.y, v.pos.z))
+	{
+		X::DrawPixel(v.pos.x, v.pos.y, v.color);
+	}
 }
 
 void Rasterizer::DrawLine(const Vertex& a, const Vertex& b) {

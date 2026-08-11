@@ -9,9 +9,9 @@ bool CmdPushTranslation::Execute(const std::vector<std::string>& params)
 		return false;
 	}
 	VariableCache* vc = VariableCache::Get();
-	float x = std::stof(params[0]);
-	float y = std::stof(params[1]);
-	float z = std::stof(params[2]);
+	float x = vc->GetFloat(params[0]);
+	float y = vc->GetFloat(params[1]);
+	float z = vc->GetFloat(params[2]);
 	MatrixStack::Get()->PushTranslation(Vector3(x, y, z));
 	return true;
 }
@@ -56,9 +56,9 @@ bool CmdPushScaling::Execute(const std::vector<std::string>& params)
 		return false;
 	}
 	VariableCache* vc = VariableCache::Get();
-	float x = std::stof(params[0]);
-	float y = std::stof(params[1]);
-	float z = std::stof(params[2]);
+	float x = vc->GetFloat(params[0]);
+	float y = vc->GetFloat(params[1]);
+	float z = vc->GetFloat(params[2]);
 	MatrixStack::Get()->PushScaling(Vector3(x, y, z));
 	return true;
 }

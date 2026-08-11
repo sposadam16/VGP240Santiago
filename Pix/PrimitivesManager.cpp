@@ -20,6 +20,34 @@ namespace
 			hw  , hh  , 0.0f, 1.0f
 		};
 	}
+
+	Vector3 CreateFaceNormal(const std::vector<Vertex>& triangle) 
+	{
+		const Vector3& a = triangle[0].pos;
+		const Vector3& b = triangle[1].pos;
+		const Vector3& c = triangle[2].pos;
+
+		Vector3 norm = MathHelper::Normalize(MathHelper::Cross((b - a), (c - a)));
+		return norm;
+	}
+
+	bool CullTriangle(CullMode mode, const std::vector<Vertex>& triangle)
+	{
+		if (mode == CullMode::None)
+		{
+			return false;
+		}
+		Vector3 faceNormal = CreateFaceNormal(triangle);
+		if (mode == CullMode::Back)
+		{
+			return faceNormal.z > 0.0f;
+		}
+		if (mode == CullMode::Front)
+		{
+			return faceNormal.z < 0.0f;
+		}
+		return false;
+	}
 }
 
 PrimitivesManager::PrimitivesManager()
@@ -30,6 +58,14 @@ PrimitivesManager* PrimitivesManager::Get()
 	static PrimitivesManager sInstance;
 	return &sInstance;
 }
+void PrimitivesManager::OnNewFrame() {
+	mCullMode = CullMode::Back;
+}
+void PrimitivesManager::SetCullMode(CullMode mode)
+{
+	mCullMode = mode;
+}
+
 bool PrimitivesManager::BeginDraw(Topology topology, bool applyTransform)
 {
 	mVertexBuffer.clear();
@@ -57,7 +93,8 @@ void PrimitivesManager::EndDraw() {
 	Matrix4 matView = Camera::Get()->GetViewMatrix();
 	Matrix4 matProj = Camera::Get()->GetProjectionMatrix();
 	Matrix4 matScreen = GetScreenTranform();
-	Matrix4 matFinal = matWorld * matView * matProj * matScreen;
+	//Matrix4 matFinal = matWorld * matView * matProj * matScreen;
+	Matrix4 matNDSpace = matWorld * matView * matProj;
 	switch (mTopology)
 	{
 	case Topology::Point: {
@@ -88,7 +125,16 @@ void PrimitivesManager::EndDraw() {
 			{
 				for (size_t t = 0; t < triangle.size(); ++t)
 				{
-					triangle[t].pos = MathHelper::TransformCoord(triangle[t].pos, matFinal);
+					triangle[t].pos = MathHelper::TransformCoord(triangle[t].pos, matNDSpace);
+
+				}
+				if (CullTriangle(mCullMode, triangle))
+				{
+					continue;
+				}
+				for (size_t t = 0; t < triangle.size(); ++t)
+				{
+					triangle[t].pos = MathHelper::TransformCoord(triangle[t].pos, matScreen);
 
 					MathHelper::FlattenVectorScreenCoord(triangle[t].pos);
 				}
