@@ -5,6 +5,8 @@ C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdCamera.cpp;
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdDrawPixel.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdDrawPixel.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdEnableDepth.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdEnableDepth.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdEndDraw.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdEndDraw.obj
+C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdLights.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdLights.obj
+C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdMaterial.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdMaterial.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdMatrixStack.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdMatrixStack.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdSetClipping.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdSetClipping.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdSetColor.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CmdSetColor.obj
@@ -19,6 +21,9 @@ C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CmdVertex.cpp;
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\CommandDictionary.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\CommandDictionary.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\DepthBuffer.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\DepthBuffer.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\Graphics.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\Graphics.obj
+C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\LightManager.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\LightManager.obj
+C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\LightTypes.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\LightTypes.obj
+C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\MaterialManager.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\MaterialManager.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\MathHelper.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\MathHelper.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\MatrixStack.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\MatrixStack.obj
 C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\PixEditor.cpp;C:\Users\santi\OneDrive\Documentos\3D Concepts\VGP240Santiago\Pix\x64\Debug\PixEditor.obj

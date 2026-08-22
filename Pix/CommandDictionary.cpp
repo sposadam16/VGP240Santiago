@@ -16,6 +16,8 @@
 #include "CmdCamera.h"
 #include "CmdSetCullMode.h"
 #include "CmdEnableDepth.h"
+#include "CmdMaterial.h"
+#include "CmdLights.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -42,6 +44,21 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetColor>();
 	RegisterCommand<CmdSetFilledMode>();
 	RegisterCommand<CmdEnableDepth>();
+
+	// Material commands
+	RegisterCommand<CmdSetMaterialEmissive>();
+	RegisterCommand<CmdSetMaterialAmbient>();
+	RegisterCommand<CmdSetMaterialDiffuse>();
+	RegisterCommand<CmdSetMaterialSpecular>();
+	RegisterCommand<CmdSetMaterialShininess>();
+
+	// Light commands
+	RegisterCommand<CmdSetLightAmbient>();
+	RegisterCommand<CmdSetLightDiffuse>();
+	RegisterCommand<CmdSetLightSpecular>();
+	RegisterCommand<CmdAddDirectionalLight>();
+	RegisterCommand<CmdAddPointLight>();
+	RegisterCommand<CmdAddSpotLight>();
 
 	// Primitive drawing commands
 	RegisterCommand<CmdBeginDraw>();
