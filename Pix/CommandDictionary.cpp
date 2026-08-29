@@ -15,9 +15,11 @@
 #include "CmdMatrixStack.h"
 #include "CmdCamera.h"
 #include "CmdSetCullMode.h"
+#include "CmdSetShadeMode.h"
 #include "CmdEnableDepth.h"
 #include "CmdMaterial.h"
 #include "CmdLights.h"
+#include "CmdModel.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -44,6 +46,7 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetColor>();
 	RegisterCommand<CmdSetFilledMode>();
 	RegisterCommand<CmdEnableDepth>();
+	RegisterCommand<CmdSetShadeMode>();
 
 	// Material commands
 	RegisterCommand<CmdSetMaterialEmissive>();
@@ -65,6 +68,7 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdVertex>();
 	RegisterCommand<CmdEndDraw>();
 	RegisterCommand<CmdSetCullMode>();
+	RegisterCommand<CmdModel>();
 
 	//Matrix stack commands
 	RegisterCommand<CmdPushTranslation>();

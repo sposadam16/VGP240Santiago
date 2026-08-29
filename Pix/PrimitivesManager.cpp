@@ -96,6 +96,8 @@ void PrimitivesManager::EndDraw() {
 	Matrix4 matScreen = GetScreenTranform();
 	//Matrix4 matFinal = matWorld * matView * matProj * matScreen;
 	Matrix4 matNDSpace = matView * matProj;
+
+	ShadeMode shadeMode = Rasterizer::Get()->GetShadeMode();
 	switch (mTopology)
 	{
 	case Topology::Point: {
@@ -120,51 +122,76 @@ void PrimitivesManager::EndDraw() {
 			std::vector<Vertex> triangle = {
 				mVertexBuffer[i - 2],
 				mVertexBuffer[i - 1],
-				mVertexBuffer[i ]
+				mVertexBuffer[i]
 			};
-			if (mApplyTransform) 
+			if (mApplyTransform)
 			{
-				// world space
-				for (size_t t = 0; t < triangle.size(); ++t)
+				//local
+				if (MathHelper::CheckEqual(MathHelper::MagnitudeSquared(triangle[0].norm), 0.0f))
 				{
-					triangle[t].pos = MathHelper::TransformCoord(triangle[t].pos, matWorld);
+
+					Vector3 faceNorm = CreateFaceNormal(triangle);
+					for (size_t t = 0; t < triangle.size(); ++t)
+					{
+						triangle[t].norm = faceNorm;
+
+					}
 
 				}
-				Vector3 faceNorm = CreateFaceNormal(triangle);
-				for (size_t t = 0; t < triangle.size(); ++t)
-				{
-					triangle[t].color *= LightManager::Get()->ComputeLightColor(triangle[t].pos, faceNorm);
+					// world space
+					for (size_t t = 0; t < triangle.size(); ++t)
+					{
+						triangle[t].pos = MathHelper::TransformCoord(triangle[t].pos, matWorld);
+						triangle[t].worldPos = triangle[t].pos;
+						triangle[t].norm = MathHelper::TransformCoord(triangle[t].norm, matWorld);
+
+					}
+					if (shadeMode == ShadeMode::Flat)
+					{
+						X::Color lightColor = LightManager::Get()->ComputeLightColor(triangle[0].pos, triangle[0].norm);
+						triangle[0].color *= lightColor;
+						triangle[1].color *= lightColor;
+						triangle[2].color *= lightColor;
+					}
+					else if (shadeMode == ShadeMode::Gouraud)
+					{
+						for (size_t t = 0; t < triangle.size(); ++t)
+						{
+							triangle[t].color *= LightManager::Get()->ComputeLightColor(triangle[t].pos, triangle[t].norm);
+
+						}
+					}
+					// NDC space
+
+					for (size_t t = 0; t < triangle.size(); ++t)
+					{
+						triangle[t].pos = MathHelper::TransformCoord(triangle[t].pos, matNDSpace);
+
+					}
+					if (CullTriangle(mCullMode, triangle))
+					{
+						continue;
+					}
+
+					// Screen space
+					for (size_t t = 0; t < triangle.size(); ++t)
+					{
+						triangle[t].pos = MathHelper::TransformCoord(triangle[t].pos, matScreen);
+
+						MathHelper::FlattenVectorScreenCoord(triangle[t].pos);
+					}
 				}
-
-				// NDC space
-				for (size_t t = 0; t < triangle.size(); ++t)
+				if (!Clipper::Get()->ClipTriangle(triangle))
 				{
-					triangle[t].pos = MathHelper::TransformCoord(triangle[t].pos, matNDSpace);
+					for (size_t t = 2; t < triangle.size(); ++t)
+					{
+						Rasterizer::Get()->DrawTriangle(triangle[0], triangle[t - 1], triangle[t]);
+					}
 
-				}
-				if (CullTriangle(mCullMode, triangle))
-				{
-					continue;
-				}
-
-				// Screen space
-				for (size_t t = 0; t < triangle.size(); ++t)
-				{
-					triangle[t].pos = MathHelper::TransformCoord(triangle[t].pos, matScreen);
-
-					MathHelper::FlattenVectorScreenCoord(triangle[t].pos);
 				}
 			}
-			if (!Clipper::Get()->ClipTriangle(triangle))
-			{
-				for (size_t t = 2; t < triangle.size(); ++t)
-				{
-				Rasterizer::Get()->DrawTriangle(triangle[0], triangle[t -1], triangle[t]);
-				}
-					
-			}
+			break;
 		}
-		break;
 	}
-	}
+	
 }

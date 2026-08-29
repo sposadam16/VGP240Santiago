@@ -1,5 +1,6 @@
 #include "Rasterizer.h"
 #include "DepthBuffer.h"
+#include "LightManager.h"
 
 void DrawLineHorizontal(const Vertex& left, const Vertex& right) {
 	float dx = right.pos.x - left.pos.x;
@@ -42,7 +43,13 @@ void Rasterizer::DrawPoint(const Vertex& v)
 {
 	if (DepthBuffer::Get()->CheckDepthBuffer(v.pos.x, v.pos.y, v.pos.z))
 	{
-		X::DrawPixel(v.pos.x, v.pos.y, v.color);
+
+		X::Color pixelColor = v.color;
+		if (mShadeMode == ShadeMode::Phong)
+		{
+			pixelColor *= LightManager::Get()->ComputeLightColor(v.worldPos, v.norm);
+		}
+		X::DrawPixel(v.pos.x, v.pos.y, pixelColor);
 	}
 }
 
@@ -67,6 +74,16 @@ void Rasterizer::DrawLine(const Vertex& a, const Vertex& b) {
 void Rasterizer::SetFillMode (FillMode fillMode) {
 	mFillMode = fillMode;
 }
+
+void Rasterizer::SetShadeMode(ShadeMode shadeMode)
+{
+	mShadeMode = shadeMode;
+}
+ShadeMode Rasterizer::GetShadeMode() const
+{
+	return mShadeMode;
+}
+
 void Rasterizer::DrawTriangle(const Vertex& a, const Vertex& b, const Vertex& c) {
 	switch (mFillMode)
 	{

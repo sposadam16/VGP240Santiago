@@ -181,11 +181,13 @@
     <ClCompile Include="CmdLights.cpp" />
     <ClCompile Include="CmdMaterial.cpp" />
     <ClCompile Include="CmdMatrixStack.cpp" />
+    <ClCompile Include="CmdModel.cpp" />
     <ClCompile Include="CmdSetClipping.cpp" />
     <ClCompile Include="CmdSetColor.cpp" />
     <ClCompile Include="CmdSetCullMode.cpp" />
     <ClCompile Include="CmdSetFilledMode.cpp" />
     <ClCompile Include="CmdSetResolution.cpp" />
+    <ClCompile Include="CmdSetShadeMode.cpp" />
     <ClCompile Include="CmdSetViewport.cpp" />
     <ClCompile Include="CmdVarBool.cpp" />
     <ClCompile Include="CmdVarFloat.cpp" />
@@ -199,6 +201,8 @@
     <ClCompile Include="MaterialManager.cpp" />
     <ClCompile Include="MathHelper.cpp" />
     <ClCompile Include="MatrixStack.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ModelManager.cpp" />
     <ClCompile Include="PixEditor.cpp" />
     <ClCompile Include="PrimitivesManager.cpp" />
     <ClCompile Include="Rasterizer.cpp" />
@@ -224,11 +228,13 @@
     <ClInclude Include="CmdLights.h" />
     <ClInclude Include="CmdMaterial.h" />
     <ClInclude Include="CmdMatrixStack.h" />
+    <ClInclude Include="CmdModel.h" />
     <ClInclude Include="CmdSetClipping.h" />
     <ClInclude Include="CmdSetColor.h" />
     <ClInclude Include="CmdSetCullMode.h" />
     <ClInclude Include="CmdSetFilledMode.h" />
     <ClInclude Include="CmdSetResolution.h" />
+    <ClInclude Include="CmdSetShadeMode.h" />
     <ClInclude Include="CmdSetViewport.h" />
     <ClInclude Include="CmdVarBool.h" />
     <ClInclude Include="CmdVarFloat.h" />
@@ -245,6 +251,8 @@
     <ClInclude Include="MathHelper.h" />
     <ClInclude Include="Matrix4.h" />
     <ClInclude Include="MatrixStack.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="ModelManager.h" />
     <ClInclude Include="PixEditor.h" />
     <ClInclude Include="PrimitivesManager.h" />
     <ClInclude Include="Rasterizer.h" />

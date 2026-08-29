@@ -75,7 +75,7 @@ public:
 	{
 		return "AddPointLight(x, y, z, <constant> , <linear>, <quadratic>)\n"
 			"\n"
-			"- adds a point light to the scene at a specified position\n";
+			"- adds a point light to the scene at a specified position\n"
 			"- can modify the attenuation constants\n";
 	}
 	bool Execute(const std::vector<std::string>& params) override;
@@ -91,10 +91,9 @@ public:
 	}
 	const char* GetDescription() override
 	{
-		return "AddSpotLight(x, y, z, <constant> , <linear>, <quadratic>)\n"
+		return "AddSpotLight(pX, pY, pZ,dX,dY,dZ, <constant> , <linear>, <quad> , <angle>, <decay>)\n"
 			"\n"
-			"- adds a spot light to the scene at a specified position\n";
-			"- can modify the attenuation constants\n";
+			"- adds a spot light to the scene at a specified position and angle\n";
 	}
 	bool Execute(const std::vector<std::string>& params) override;
 

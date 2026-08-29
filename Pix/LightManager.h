@@ -15,7 +15,7 @@ public:
 	
 	void AddDirectionalLight(const Vector3& direction);
 	void AddPointLight(const Vector3& position, float kConstant, float kLinear, float kQuadratic);
-	void AddSpotLight(const Vector3& position);
+	void AddSpotLight(const Vector3& position, const Vector3& direction, float kConstant, float kLinear, float kQuadratic, float angle, float decay);
 
 	X::Color ComputeLightColor(const Vector3& position, const Vector3& normal);
 
