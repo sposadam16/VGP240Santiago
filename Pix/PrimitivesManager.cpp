@@ -59,14 +59,19 @@ PrimitivesManager* PrimitivesManager::Get()
 	static PrimitivesManager sInstance;
 	return &sInstance;
 }
-void PrimitivesManager::OnNewFrame() {
+void PrimitivesManager::OnNewFrame()
+{
 	mCullMode = CullMode::Back;
+	mCorrectUV = false;
 }
 void PrimitivesManager::SetCullMode(CullMode mode)
 {
 	mCullMode = mode;
 }
-
+void PrimitivesManager::SetCorrectUV(bool correctUV)
+{
+	mCorrectUV = correctUV;
+}
 bool PrimitivesManager::BeginDraw(Topology topology, bool applyTransform)
 {
 	mVertexBuffer.clear();
@@ -146,6 +151,10 @@ void PrimitivesManager::EndDraw() {
 						triangle[t].norm = MathHelper::TransformCoord(triangle[t].norm, matWorld);
 
 					}
+					// do nor flat if is UV
+					if (triangle[0].color.z >= 0.0f) {
+
+					//lighting modes
 					if (shadeMode == ShadeMode::Flat)
 					{
 						X::Color lightColor = LightManager::Get()->ComputeLightColor(triangle[0].pos, triangle[0].norm);
@@ -159,6 +168,21 @@ void PrimitivesManager::EndDraw() {
 						{
 							triangle[t].color *= LightManager::Get()->ComputeLightColor(triangle[t].pos, triangle[t].norm);
 
+						}
+					}
+				}
+					// if correct uv, prep uv calculation
+					else if (mCorrectUV)
+					{
+						// apply correct uv in ViewSpace
+						// go from WorldSpace to ViewSpace
+						// already in world space so multiply by matView
+						for (uint32_t t = 0; t < triangle.size(); ++t)
+						{
+							Vector3 viewSpace = MathHelper::TransformCoord(triangle[t].worldPos, matView);
+							triangle[t].color.x /= viewSpace.z;
+							triangle[t].color.y /= viewSpace.z;
+							triangle[t].color.w = 1.0f / viewSpace.z;
 						}
 					}
 					// NDC space

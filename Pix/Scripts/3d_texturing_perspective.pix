@@ -1,0 +1,63 @@
+SetResolution(500, 500, 1)
+
+SetViewport(50, 50, 400, 400, true)
+SetClipping(true)
+SetCullMode(back)
+EnableDepth(true)
+SetAddressMode(wrap)
+
+
+float $camX = 0, 0.01
+float $camY = 0, 0.01
+float $camZ = -3, 0.01
+
+float $camDirX = 0, 0.01
+float $camDirY = 0, 0.01
+float $camDirZ = 1, 0.01
+
+float $rotX = 0, 0.1
+float $rotY = 0, 0.1
+float $rotZ = 0, 0.1
+
+bool $correctUV = false
+bool $useFilter = false
+
+SetCameraPosition($camX, $camY, $camZ)
+SetCameraDirection($camDirX, $camDirY, $camDirZ)
+
+//SetTexture(../Images/checker.bmp)
+//SetTexture(../Images/sponge_bob.bmp)
+//SetTexture(../Images/crate.bmp)
+SetTexture(../Images/cat.bmp)
+
+PushTranslation(0, 0, 0)
+PushRotationZ($rotZ)
+PushRotationY($rotY)
+PushRotationX($rotX)
+
+SetCorrectUV($correctUV)
+SetUseFilter($useFilter)
+
+BeginDraw(triangle, true)
+
+//Vertex(-1, -1, 0, 0, 1, -1)
+//Vertex(-1,  1, 0, 0, 0, -1)
+//Vertex( 1,  1, 0, 1, 0, -1)
+//Vertex(-1, -1, 0, 0, 1, -1)
+//Vertex( 1,  1, 0, 1, 0, -1)
+//Vertex( 1, -1, 0, 1, 1, -1)
+
+// UV values outside 0-1: use these later to test Border, Clamp, Wrap, or Mirror.
+Vertex(-1, -1, 0, -1, 2, -1)
+Vertex(-1,  1, 0, -1, -1, -1)
+Vertex( 1,  1, 0, 2, -1, -1)
+Vertex(-1, -1, 0, -1, 2, -1)
+Vertex( 1,  1, 0,  2, -1, -1)
+Vertex( 1, -1, 0,  2, 2, -1)
+
+EndDraw()
+
+
+
+
+

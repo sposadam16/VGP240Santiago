@@ -18,10 +18,11 @@ class PrimitivesManager
 public:
 	static PrimitivesManager* Get();
 
+	void OnNewFrame();
 	void SetCullMode(CullMode mode);
+	void SetCorrectUV(bool correctUV);
 
 	//Start accepting Vertices
-	void OnNewFrame();
 
 	bool BeginDraw(Topology topology, bool applyTransform);
 
@@ -37,5 +38,6 @@ private:
 	Topology mTopology = Topology::Point;
 	CullMode mCullMode = CullMode::None;
 	bool mbDrawBegin = false;
+	bool mCorrectUV = false;
 };
 

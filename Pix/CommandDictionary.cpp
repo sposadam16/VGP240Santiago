@@ -20,6 +20,11 @@
 #include "CmdMaterial.h"
 #include "CmdLights.h"
 #include "CmdModel.h"
+#include "CmdSetTexture.h"
+#include "CmdSetCorrectUV.h"
+#include "CmdSetUseFilter.h"
+#include "CmdSetAddressMode.h"
+
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -47,6 +52,9 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetFilledMode>();
 	RegisterCommand<CmdEnableDepth>();
 	RegisterCommand<CmdSetShadeMode>();
+	RegisterCommand<CmdSetTexture>();
+	RegisterCommand<CmdSetUseFilter>();
+	RegisterCommand<CmdSetAddressMode>();
 
 	// Material commands
 	RegisterCommand<CmdSetMaterialEmissive>();
@@ -69,6 +77,7 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdEndDraw>();
 	RegisterCommand<CmdSetCullMode>();
 	RegisterCommand<CmdModel>();
+	RegisterCommand<CmdSetCorrectUV>();
 
 	//Matrix stack commands
 	RegisterCommand<CmdPushTranslation>();
